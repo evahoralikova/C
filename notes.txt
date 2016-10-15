@@ -4,16 +4,20 @@ dir .. vypise obsah aktualniho adresare
 
 
 git
-  clone
+  clone (malo caste)
   add
   commit
+    git commit . -m "text" (.= aktualni adresar)
+  status (nic nedela jen napise status)
   push
   https://github.com/evahoralikova/first
+
+
 
 compilator c
 https://www.tutorialspoint.com/cprogramming/c_program_structure.htm
     gcc
     parametr
-      gcc helloworld.c
-      .. vytvori a.exe
-      a   ... spustim
+      gcc helloworld.c -o Helloworld.exe
+      Helloworld.exe
+        .. spusteni

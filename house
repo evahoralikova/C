@@ -1,0 +1,163 @@
+#include "stdio.h"
+int number = 11;
+void
+strecha ()
+{
+  for (int i = 0; i < number - 1; i = i + 2)
+    {
+      for (int j = number - i - 1; j > 0; j = j - 2)
+	{			//why the -1 ???
+	  printf (" ");
+	}
+      for (int k = 0; k <= i; k++)
+	{
+	  printf ("U");
+	}
+      printf ("\n");
+    }
+}
+
+void
+stenyGaraz ()
+{
+
+
+  for (int i = 0; i < number + 1; i++)
+    {				//radky
+
+
+      if (i == 0)
+	{			//strop
+	  for (int j = 0; j < number; j++)
+	    {
+	      if (j == 0)
+		{
+		  printf ("X");
+		}
+	      else if (j == number - 1)
+		{
+		  printf ("X\n");
+		}
+	      else
+		{
+		  printf ("-");
+		}
+
+	    }
+
+	}
+
+
+      else if (i > number / 2 + 1)
+	{			//garaz
+	  for (int j = 0; j < 2 * number - 1; j++)
+	    {
+	      if (i != number)
+		{
+		  if (j == 0 || j == number - 1)
+		    {
+		      printf ("|");
+		    }
+		  else if (j == 2 * number - 2)
+		    {
+		      printf ("|\n");
+		    }
+		  else
+		    {
+		      printf ("v");
+		    }
+		}
+	      else
+		{
+		  if (j == 0 || j == number - 1 || j == 2 * number - 2)
+		    {
+		      printf ("X");
+		    }
+		  else
+		    {
+		      printf ("-");
+		    }
+		}
+
+
+
+
+	    }
+	}
+      else if (i == number / 2 + 1)
+	{			//strecha garaze
+	  for (int j = 0; j < 2 * number - 1; j++)
+	    {
+	      if (j == 2 * number - 2)
+		{
+		  printf ("X\n");
+		}
+	      else if (j == 0 || j == number - 1)
+		{
+		  printf ("|");
+
+		}
+	      else if (j < 2 * number - 1 && j > number - 2)
+		{
+		  printf ("-");
+		}
+	      else
+		{
+		  printf ("o");
+		}
+	    }
+	}			//patro
+      else if (i < number / 2)
+	{
+	  for (int j = 0; j < number; j++)
+	    {
+	      if (j == 0)
+		{
+		  printf ("|");
+		}
+	      else if (j == number - 1)
+		{
+		  printf ("|\n");
+		}
+	      else
+		{
+		  printf ("x");
+		}
+	    }
+	}
+      else if (i == number)
+	{
+	  for (int j = 0; j < 2 * number; j++)
+	    {
+	      if (j == 0)
+		{
+		  printf ("X");
+		}
+
+	      else if (j == 2 * number - 1)
+		{
+		  printf ("X");
+		}
+	      else
+		{
+		  printf ("_");
+		}
+
+	    }
+	}
+
+
+    }
+}
+
+int
+main ()
+{
+  strecha ();
+
+  stenyGaraz ();
+
+
+  return 0;
+
+}
